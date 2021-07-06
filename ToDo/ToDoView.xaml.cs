@@ -15,6 +15,7 @@ namespace ToDo
         public ToDoView()
         {
             InitializeComponent();
+            BindingContext = new ToDoViewModel();
         }
     }
 }
