@@ -14,6 +14,8 @@ namespace ToDo
         private string _completedHeader;
         private double _completedProgress;
 
+        public event EventHandler<double> UpdateProgressBar;
+
         public ToDoViewModel()
         {
             Items = new ObservableCollection<ToDoItem>(ToDoItem.GetToDoItems());
@@ -68,6 +70,7 @@ namespace ToDo
         {
             CompletedHeader = $"Completed {Items.Count(x => x.Completed)}/{Items.Count}";
             CompletedProgress = (double)Items.Count(x => x.Completed) / (double)Items.Count;
+            UpdateProgressBar?.Invoke(this, CompletedProgress);
         }
 
         private void AddNewItem()
