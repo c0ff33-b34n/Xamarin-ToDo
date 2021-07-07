@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace ToDo
@@ -23,6 +24,13 @@ namespace ToDo
                 PageTitle = value?.Name;
                 OnPropertyChanged("PageTitle");
             }
+        }
+
+        public ICommand AddItemCommand => new Command(() => AddNewItem());
+
+        private void AddNewItem()
+        {
+            Items.Add(new ToDoItem($"ToDo Item {Items.Count + 1}"));
         }
     }
 }
