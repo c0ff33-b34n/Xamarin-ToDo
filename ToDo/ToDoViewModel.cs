@@ -33,6 +33,8 @@ namespace ToDo
         private void MarkAsCompleted(ToDoItem obj)
         {
             obj.Completed = true;
+            Items.Remove(obj);
+            Items.Add(obj);
         }
 
         private void AddNewItem()
