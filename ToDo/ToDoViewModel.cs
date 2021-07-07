@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace ToDo
 {
-    class ToDoViewModel : BindableObject
+    public class ToDoViewModel : BindableObject
     {
         private ToDoItem _selectedItem;
         private string _completedHeader;
