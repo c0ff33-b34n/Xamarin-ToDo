@@ -14,6 +14,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:BoolToColorConverter x:Key="BoolToColor" />
+            <local:BoolToTextDecorationConverter x:Key="BoolToTextDecoration" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -29,7 +30,8 @@
                         </ViewCell.ContextActions>
                         <StackLayout>
                             <Label Text="{Binding Name}"
-                                   TextColor="{Binding Completed, Converter={StaticResource BoolToColor}}"/>
+                                   TextColor="{Binding Completed, Converter={StaticResource BoolToColor}}"
+                                   TextDecorations="{Binding Completed, Converter={StaticResource BoolToTextDecoration}}"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
