@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace ToDo
 {
-    class BoolToTextDecorationConverter : IValueConverter
+    public class BoolToTextDecorationConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
