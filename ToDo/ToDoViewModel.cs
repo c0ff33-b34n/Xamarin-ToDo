@@ -28,6 +28,13 @@ namespace ToDo
 
         public ICommand AddItemCommand => new Command(() => AddNewItem());
 
+        public ICommand MarkAsCompletedCommand => new Command<ToDoItem>(MarkAsCompleted);
+
+        private void MarkAsCompleted(ToDoItem obj)
+        {
+            obj.Completed = true;
+        }
+
         private void AddNewItem()
         {
             Items.Add(new ToDoItem($"ToDo Item {Items.Count + 1}"));
